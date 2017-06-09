@@ -21,6 +21,8 @@ namespace Gym.Models
         public int Age { get; set; }
 
         public Spot Place { get; set; }
+
+        public Activity Activity { get; set; }
         
     }
 }

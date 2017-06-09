@@ -21,5 +21,7 @@ namespace Gym.Context
 
         public DbSet<Workout> Workouts { get; set; }
 
+        public DbSet<Activity> Activities { get; set; }
+
     }
 }

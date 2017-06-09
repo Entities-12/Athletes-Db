@@ -9,7 +9,10 @@ namespace Gym.Models
 {
     public class Athlete : IPerson
     {
-        public Athlete() { }
+        public Athlete()
+        {
+            this.Workouts = new HashSet<Workout>();
+        }
 
 
         public int Id { get; set; }
@@ -22,7 +25,7 @@ namespace Gym.Models
 
         public Trainer Coach { get; set; }
 
-        public ICollection<Workout> Workouts { get; set; }
+        public virtual ICollection<Workout> Workouts { get; set; }
 
     }
 }
