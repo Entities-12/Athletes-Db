@@ -26,7 +26,11 @@ namespace Gym.Import
                 
                 var data = JsonConvert.DeserializeObject<Athlete>(jsonData);
 
-                db.GetInstance().Athletes.Add(data);
+                var context = db.GetInstance();
+
+                context.Athletes.Add(data);
+                
+                context.SaveChanges();
             }
         }
     }
