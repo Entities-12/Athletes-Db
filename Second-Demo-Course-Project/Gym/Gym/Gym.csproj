@@ -135,10 +135,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandProcessor.cs" />
     <Compile Include="Database\Context\GymDbContext.cs" />
     <Compile Include="Database\Database.cs" />
     <Compile Include="Database\IDatabase.cs" />
-    <Compile Include="Import\JSONImporter.cs" />
+    <Compile Include="Exporters\JSONExporter.cs" />
+    <Compile Include="GymApp.cs" />
+    <Compile Include="Importers\JSONImporter.cs" />
     <Compile Include="Migrations\201706081930491_InitialCreate.cs" />
     <Compile Include="Migrations\201706081930491_InitialCreate.Designer.cs">
       <DependentUpon>201706081930491_InitialCreate.cs</DependentUpon>
@@ -146,6 +149,10 @@
     <Compile Include="Migrations\201706082005413_Update trainers table..cs" />
     <Compile Include="Migrations\201706082005413_Update trainers table..Designer.cs">
       <DependentUpon>201706082005413_Update trainers table..cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706091644397_Updates.cs" />
+    <Compile Include="Migrations\201706091644397_Updates.Designer.cs">
+      <DependentUpon>201706091644397_Updates.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
@@ -161,7 +168,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Data\activityData.json" />
     <None Include="Data\data.json" />
+    <None Include="ExportedFiles\jsonExports.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706082005413_Update trainers table..resx">
       <DependentUpon>201706082005413_Update trainers table..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706091644397_Updates.resx">
+      <DependentUpon>201706091644397_Updates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -1,5 +1,6 @@
 ﻿using Gym.Context;
 using Gym.DatabaseAndContext;
+using Gym.Exporters;
 using Gym.Import;
 using Gym.Models;
 using Newtonsoft.Json;
@@ -14,17 +15,16 @@ namespace Gym
         {
 
             // For creating the database.
-            using (var context = new GymDbContext())
-            {
-                context.Database.CreateIfNotExists();
-            }
+            /*    using (var context = new GymDbContext())
+                {
+                    context.Database.CreateIfNotExists();
+                }*/
+
+
+            var app = new GymApp();
+
+            app.Run();
             
-
-            /*IDatabase db = new Database();
-            var jsonImporter = new JSONImporter();
-
-            jsonImporter.ImportJSONFileDataToTheDatabase("../../Data/data.json", db);
-            */
         }
     }
 }
