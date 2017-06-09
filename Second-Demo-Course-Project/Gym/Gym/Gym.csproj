@@ -56,7 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\GymDbContext.cs" />
+    <Compile Include="Database\Context\GymDbContext.cs" />
+    <Compile Include="Database\Database.cs" />
+    <Compile Include="Database\IDatabase.cs" />
+    <Compile Include="Import\JSONImporter.cs" />
     <Compile Include="Migrations\201706081930491_InitialCreate.cs" />
     <Compile Include="Migrations\201706081930491_InitialCreate.Designer.cs">
       <DependentUpon>201706081930491_InitialCreate.cs</DependentUpon>

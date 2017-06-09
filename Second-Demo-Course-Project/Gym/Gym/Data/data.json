@@ -1,14 +1,14 @@
 ﻿{
-    "FirstName": "Pesho",
+    "FirstName": "Dimitar",
     "LastName": "Stoyanov",
-    "Age": "16",
+    "Age": "23",
     "Coach": {
-      "Age": "21",
-      "FirstName": "Victor",
+      "Age": "23",
+      "FirstName": "Ivan",
       "LastName": "Petkov",
       "Place": {
         "Address": "Some Address",
-        "ContactNumber": "0884232949"
+        "ContactNumber": "088234789"
       }
     } 
   }

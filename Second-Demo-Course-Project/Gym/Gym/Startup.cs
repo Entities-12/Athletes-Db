@@ -1,12 +1,10 @@
 ﻿using Gym.Context;
+using Gym.DatabaseAndContext;
+using Gym.Import;
 using Gym.Models;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gym
 {
@@ -14,29 +12,17 @@ namespace Gym
     {
         static void Main()
         {
-           // If the database isn't created uncomment this.
-           /* using (var context = new GymDbContext())
+
+            // For creating the database.
+            /*using (var context = new GymDbContext())
             {
                 context.Database.CreateIfNotExists();
-            } */
+            }*/
 
-            using (StreamReader streamReader = new StreamReader("../../Data/data.json"))
-            {
-                string jsonData = streamReader.ReadToEnd();
+            IDatabase db = new Database();
+            var jsonImporter = new JSONImporter();
 
-                Console.WriteLine(jsonData);
-
-                var athlete = JsonConvert.DeserializeObject<Athlete>(jsonData);
-                
-                Console.WriteLine(athlete.FirstName);
-
-                var context = new GymDbContext();
-
-                context.Athletes.Add(athlete);
-
-                context.SaveChanges();
-                
-            }
+            jsonImporter.ImportJSONFileDataToTheDatabase("../../Data/data.json", db);
         }
     }
 }
