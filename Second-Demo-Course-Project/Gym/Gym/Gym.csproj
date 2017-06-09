@@ -154,6 +154,10 @@
     <Compile Include="Migrations\201706091644397_Updates.Designer.cs">
       <DependentUpon>201706091644397_Updates.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706091755244_new model.cs" />
+    <Compile Include="Migrations\201706091755244_new model.Designer.cs">
+      <DependentUpon>201706091755244_new model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Athlete.cs" />
@@ -182,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706091644397_Updates.resx">
       <DependentUpon>201706091644397_Updates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706091755244_new model.resx">
+      <DependentUpon>201706091755244_new model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

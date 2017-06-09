@@ -22,9 +22,9 @@ namespace Gym.Models
 
         public DayOfWeek Day { get; set; }
 
-        public Activity WorkoutName { get; set; }
+        public virtual Activity WorkoutName { get; set; }
 
-        public Trainer Trainer { get; set;  }
+        public virtual Trainer Trainer { get; set;  }
 
         public virtual ICollection<Athlete> Athletes
         {

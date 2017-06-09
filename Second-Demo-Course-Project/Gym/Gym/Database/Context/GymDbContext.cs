@@ -13,15 +13,15 @@ namespace Gym.Context
         public GymDbContext() 
             : base("Gym-Second-Demo") { }
 
-        public DbSet<Athlete> Athletes { get; set; }
+        public virtual  IDbSet<Athlete> Athletes { get; set; }
 
-        public DbSet<Trainer> Trainers { get; set; }
+        public virtual IDbSet<Trainer> Trainers { get; set; }
 
-        public DbSet<Spot> Spots { get; set; }
+        public virtual IDbSet<Spot> Spots { get; set; }
 
-        public DbSet<Workout> Workouts { get; set; }
+        public virtual IDbSet<Workout> Workouts { get; set; }
 
-        public DbSet<Activity> Activities { get; set; }
+        public virtual IDbSet<Activity> Activities { get; set; }
 
     }
 }

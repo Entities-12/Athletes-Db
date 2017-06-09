@@ -21,7 +21,7 @@ namespace Gym.Models
 
         public int Age { get; set; }
 
-        public Spot Place { get; set; }
+        public virtual Spot Place { get; set; }
 
 
         
