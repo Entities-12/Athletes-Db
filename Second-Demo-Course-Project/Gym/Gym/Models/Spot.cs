@@ -7,9 +7,11 @@ namespace Gym.Models
 {
     public class Spot
     {
+        private ICollection<Workout> workouts;
+
         public Spot()
         {
-            this.Activities = new HashSet<Activity>();
+            this.workouts = new HashSet<Workout>();
         }
 
         [Key]
@@ -21,7 +23,11 @@ namespace Gym.Models
 
         public SpotCapacity Capacity { get; set; }
 
-        public virtual ICollection<Activity> Activities { get; set; }
+        public virtual ICollection<Workout> Workouts
+        {
+            get { return this.workouts; }
+            set { this.workouts = value; }
+        }
 
     }
 }

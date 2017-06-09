@@ -23,7 +23,8 @@ namespace Gym.Models
 
         public Spot Place { get; set; }
 
-        public Activity Activity { get; set; }
+
         
+
     }
 }

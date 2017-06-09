@@ -15,15 +15,15 @@ namespace Gym
         {
 
             // For creating the database.
-            /*    using (var context = new GymDbContext())
+                using (var context = new GymDbContext())
                 {
                     context.Database.CreateIfNotExists();
-                }*/
+                }
 
 
-            var app = new GymApp();
+          //  var app = new GymApp();
 
-            app.Run();
+          //  app.Run();
             
         }
     }

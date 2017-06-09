@@ -13,5 +13,6 @@ namespace Gym.Models
         public string Name { get; set; }
 
         public Category Category { get; set; }
+
     }
 }

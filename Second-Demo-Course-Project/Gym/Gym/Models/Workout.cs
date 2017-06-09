@@ -6,9 +6,11 @@ namespace Gym.Models
 {
     public class Workout
     {
+        private ICollection<Athlete> athletes;
+
         public Workout()
         {
-            this.Athletes = new HashSet<Athlete>();
+            this.athletes = new HashSet<Athlete>();
         }
 
         [Key]
@@ -20,8 +22,14 @@ namespace Gym.Models
 
         public DayOfWeek Day { get; set; }
 
-        public Activity SportType { get; set; }
+        public Activity WorkoutName { get; set; }
 
-        public virtual ICollection<Athlete> Athletes { get; set; }
+        public Trainer Trainer { get; set;  }
+
+        public virtual ICollection<Athlete> Athletes
+        {
+          get { return this.athletes; }
+          set { this.athletes = value; }
+        }
     }
 }
