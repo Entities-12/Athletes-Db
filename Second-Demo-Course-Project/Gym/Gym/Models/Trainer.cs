@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gym.Models
 {
-    public class Trainer : IPerson
+    public class Trainer : IPerson, IModel
     {
         public Trainer() { }
 

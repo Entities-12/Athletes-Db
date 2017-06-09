@@ -157,6 +157,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Athlete.cs" />
+    <Compile Include="Models\Contracts\IModel.cs" />
     <Compile Include="Models\Enums\Category.cs" />
     <Compile Include="Models\Contracts\IPerson.cs" />
     <Compile Include="Models\Spot.cs" />

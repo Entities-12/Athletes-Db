@@ -1,9 +1,10 @@
-﻿using Gym.Models.Enums;
+﻿using Gym.Models.Contracts;
+using Gym.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace Gym.Models
 {
-    public class Activity
+    public class Activity : IModel
     {
         public Activity() { }
 

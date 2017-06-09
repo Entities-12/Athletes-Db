@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using Gym.Models.Enums;
 using System.ComponentModel.DataAnnotations;
+using Gym.Models.Contracts;
 
 namespace Gym.Models
 {
-    public class Spot
+    public class Spot : IModel
     {
         public Spot()
         {

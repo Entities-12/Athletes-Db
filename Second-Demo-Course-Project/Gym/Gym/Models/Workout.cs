@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Gym.Models.Contracts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Gym.Models
 {
-    public class Workout
+    public class Workout : IModel
     {
         public Workout()
         {
