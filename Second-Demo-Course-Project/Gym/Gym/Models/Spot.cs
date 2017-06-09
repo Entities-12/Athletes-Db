@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Gym.Models.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace Gym.Models
 {
@@ -11,6 +12,7 @@ namespace Gym.Models
             this.Activities = new HashSet<Activity>();
         }
 
+        [Key]
         public int Id { get; set; }
 
         public string Address { get; set; }

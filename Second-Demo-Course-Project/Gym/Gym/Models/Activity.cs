@@ -1,4 +1,5 @@
 ﻿using Gym.Models.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace Gym.Models
 {
@@ -6,6 +7,7 @@ namespace Gym.Models
     {
         public Activity() { }
 
+        [Key]
         public int Id { get; set; }
 
         public string Name { get; set; }

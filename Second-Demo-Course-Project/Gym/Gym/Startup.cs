@@ -14,17 +14,17 @@ namespace Gym
         {
 
             // For creating the database.
-            /*using (var context = new GymDbContext())
+            using (var context = new GymDbContext())
             {
                 context.Database.CreateIfNotExists();
             }
-            */
+            
 
-            IDatabase db = new Database();
+            /*IDatabase db = new Database();
             var jsonImporter = new JSONImporter();
 
             jsonImporter.ImportJSONFileDataToTheDatabase("../../Data/data.json", db);
-            
+            */
         }
     }
 }
