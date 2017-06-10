@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gym.Models.Enums
 {
-    public enum Category
+    public enum CategoryType
     {
         light,
         heavy

@@ -158,10 +158,34 @@
     <Compile Include="Migrations\201706091755244_new model.Designer.cs">
       <DependentUpon>201706091755244_new model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706091831115_virtual properties .cs" />
+    <Compile Include="Migrations\201706091831115_virtual properties .Designer.cs">
+      <DependentUpon>201706091831115_virtual properties .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706092023299_type-suffix of enum.cs" />
+    <Compile Include="Migrations\201706092023299_type-suffix of enum.Designer.cs">
+      <DependentUpon>201706092023299_type-suffix of enum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706101639181_foreign keys.cs" />
+    <Compile Include="Migrations\201706101639181_foreign keys.Designer.cs">
+      <DependentUpon>201706101639181_foreign keys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706101711151_Trainers foreign key property - SpotID added.cs" />
+    <Compile Include="Migrations\201706101711151_Trainers foreign key property - SpotID added.Designer.cs">
+      <DependentUpon>201706101711151_Trainers foreign key property - SpotID added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706101716250_spot entity in workouts.cs" />
+    <Compile Include="Migrations\201706101716250_spot entity in workouts.Designer.cs">
+      <DependentUpon>201706101716250_spot entity in workouts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706101725378_no-changes.cs" />
+    <Compile Include="Migrations\201706101725378_no-changes.Designer.cs">
+      <DependentUpon>201706101725378_no-changes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Athlete.cs" />
-    <Compile Include="Models\Enums\Category.cs" />
+    <Compile Include="Models\Enums\CategoryType.cs" />
     <Compile Include="Models\Contracts\IPerson.cs" />
     <Compile Include="Models\Spot.cs" />
     <Compile Include="Models\Enums\SpotCapacity.cs" />
@@ -189,6 +213,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706091755244_new model.resx">
       <DependentUpon>201706091755244_new model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706091831115_virtual properties .resx">
+      <DependentUpon>201706091831115_virtual properties .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706092023299_type-suffix of enum.resx">
+      <DependentUpon>201706092023299_type-suffix of enum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706101639181_foreign keys.resx">
+      <DependentUpon>201706101639181_foreign keys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706101711151_Trainers foreign key property - SpotID added.resx">
+      <DependentUpon>201706101711151_Trainers foreign key property - SpotID added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706101716250_spot entity in workouts.resx">
+      <DependentUpon>201706101716250_spot entity in workouts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706101725378_no-changes.resx">
+      <DependentUpon>201706101725378_no-changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

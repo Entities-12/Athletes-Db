@@ -22,9 +22,19 @@ namespace Gym.Models
 
         public DayOfWeek Day { get; set; }
 
-        public virtual Activity WorkoutName { get; set; }
+        //Foreign keys
+        //   public int TrainerID { get; set;  }
 
-        public virtual Trainer Trainer { get; set;  }
+        //   public int ActivityID { get; set; }
+
+        //   public int SpotID { get; set; }
+
+        //WorkoutName
+        public virtual Activity Activity { get; set; }
+
+        public virtual Trainer Trainer { get; set; }
+
+        public virtual Spot Spot { get; set;  }
 
         public virtual ICollection<Athlete> Athletes
         {

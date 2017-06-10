@@ -10,7 +10,12 @@ namespace Gym.Models
 {
     public class Trainer : IPerson
     {
-        public Trainer() { }
+        private ICollection<Workout> workouts;
+
+        public Trainer()
+        {
+            this.workouts = new HashSet<Workout>();
+        }
 
         [Key]
         public int Id { get; set; }
@@ -21,10 +26,17 @@ namespace Gym.Models
 
         public int Age { get; set; }
 
+        //Foreign key
+        public int SpotID { get; set; }
+
         public virtual Spot Place { get; set; }
 
+        public virtual ICollection<Workout> Workouts
+        {
+            get { return this.workouts; }
+            set { this.workouts = value; }
+        }
 
-        
 
     }
 }

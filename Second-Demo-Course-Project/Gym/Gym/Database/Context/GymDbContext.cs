@@ -13,15 +13,64 @@ namespace Gym.Context
         public GymDbContext() 
             : base("Gym-Second-Demo") { }
 
-        public virtual  IDbSet<Athlete> Athletes { get; set; }
+        public virtual DbSet<Athlete> Athletes { get; set; }
 
-        public virtual IDbSet<Trainer> Trainers { get; set; }
+        public virtual DbSet<Trainer> Trainers { get; set; }
 
-        public virtual IDbSet<Spot> Spots { get; set; }
+        public virtual DbSet<Spot> Spots { get; set; }
 
-        public virtual IDbSet<Workout> Workouts { get; set; }
+        public virtual DbSet<Workout> Workouts { get; set; }
 
-        public virtual IDbSet<Activity> Activities { get; set; }
+        public virtual DbSet<Activity> Activities { get; set; }
+
+        //Fluent API
+        protected override void OnModelCreating(
+            DbModelBuilder modelBuilder)
+        {
+            //Configure default schema
+            modelBuilder.HasDefaultSchema("Gym-Second-Demo");
+
+            //Map entity to table
+            modelBuilder.Entity<Athlete>().ToTable("Athletes");
+            modelBuilder.Entity<Trainer>().ToTable("Trainers");
+            modelBuilder.Entity<Spot>().ToTable("Spots");
+            modelBuilder.Entity<Workout>().ToTable("Workouts");
+            modelBuilder.Entity<Activity>().ToTable("Activities");
+
+            this.OnWorkoutCreating(modelBuilder);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
+        private void OnWorkoutCreating(
+            DbModelBuilder modelBuilder)
+        {
+            //primary key
+            modelBuilder.Entity<Workout>()
+                .HasKey<int>(workout => workout.Id);
+
+            //Properties
+            modelBuilder.Entity<Workout>()
+                .Property(w => w.Day)
+                .IsOptional();
+            modelBuilder.Entity<Workout>()
+                .Property(w => w.StartHour)
+                .IsRequired();
+            modelBuilder.Entity<Workout>()
+                .Property(w => w.EndHour)
+                .IsRequired();
+
+            //many-to-many
+            modelBuilder.Entity<Workout>()
+                .HasMany(w => w.Athletes)
+                .WithMany(w => w.Workouts)
+                .Map(m =>
+               {
+                   m.ToTable("WorkoutsAthletes");
+                   m.MapLeftKey("WorkoutId");
+                   m.MapLeftKey("AthleteId");
+               });               
+        }
 
     }
 }
