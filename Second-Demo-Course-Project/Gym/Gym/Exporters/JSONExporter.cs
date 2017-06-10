@@ -26,13 +26,13 @@ namespace Gym.Exporters
                 default:
                     Console.WriteLine("The table is NOT FOUND!");
                     return;
-                    
+                   
             }
         } 
 
         private string GetAtctivites(IDatabase db)
         {
-            var activities = db.GetInstance().Activities;
+            var activities = db.GetInstance().Athletes;
 
             var serilizedActivities = JsonConvert.SerializeObject(activities);
 

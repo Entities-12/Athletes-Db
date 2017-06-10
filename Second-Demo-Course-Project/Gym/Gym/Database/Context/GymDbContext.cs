@@ -23,6 +23,7 @@ namespace Gym.Context
 
         public virtual DbSet<Activity> Activities { get; set; }
 
+
         //Fluent API
         protected override void OnModelCreating(
             DbModelBuilder modelBuilder)
