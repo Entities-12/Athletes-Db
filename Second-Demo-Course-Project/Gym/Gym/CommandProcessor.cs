@@ -34,7 +34,7 @@ namespace Gym
                     break;
                 //CRUD console commands
                 case "create":
-                    Console.WriteLine(" Should perform create new athlete ");
+                    Console.WriteLine(" Should perform create new athlete or workout");
                     this.Creator.CreateEntity(tableName);
                     break;
                 case "cancel":
