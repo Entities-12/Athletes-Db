@@ -4,15 +4,16 @@ using Newtonsoft.Json;
 using System;
 using System.IO;
 using Gym.DatabaseAndContext;
+using Gym.Importers.Contracts;
 
 namespace Gym.Import
 {
-    public class JSONImporter
+    public class JSONImporter : IImporter
     {
         public JSONImporter() { }
         
 
-        public void ImportJSONFileDataToTheDatabase(string path, IDatabase db)
+        public void ImportFile(string path, IDatabase db)
         {
             if (db == null || path.Length == 0)
             {

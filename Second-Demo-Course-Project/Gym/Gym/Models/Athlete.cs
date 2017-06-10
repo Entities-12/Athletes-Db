@@ -5,9 +5,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Gym.Models
 {
+    [Serializable]
     public class Athlete : IPerson, IModel
     {
         public Athlete()
@@ -24,8 +26,10 @@ namespace Gym.Models
 
         public int Age { get; set; }
 
+        [XmlIgnore]
         public Trainer Coach { get; set; }
 
+        [XmlIgnore]
         public virtual ICollection<Workout> Workouts { get; set; }
 
     }

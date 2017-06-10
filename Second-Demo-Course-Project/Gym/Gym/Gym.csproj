@@ -141,7 +141,9 @@
     <Compile Include="Database\IDatabase.cs" />
     <Compile Include="Exporters\JSONExporter.cs" />
     <Compile Include="GymApp.cs" />
+    <Compile Include="Importers\Contracts\IImporter.cs" />
     <Compile Include="Importers\JSONImporter.cs" />
+    <Compile Include="Importers\XMLImporter.cs" />
     <Compile Include="Migrations\201706081930491_InitialCreate.cs" />
     <Compile Include="Migrations\201706081930491_InitialCreate.Designer.cs">
       <DependentUpon>201706081930491_InitialCreate.cs</DependentUpon>
@@ -185,7 +187,9 @@
       <DependentUpon>201706091644397_Updates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Data\athleteXMLData.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
