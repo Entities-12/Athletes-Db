@@ -28,6 +28,7 @@ namespace Gym
                 Console.WriteLine("If you want to change your workout type: edit Workouts");
                 //Read 
                 Console.WriteLine("If you want to see your profile details type: view Athletes");
+                Console.WriteLine("If you want to see your workouts list type: view Workouts");
                 //Exit APP 
                 Console.WriteLine("If you want to exit App type: exit");
                 var command = Console.ReadLine();

@@ -44,7 +44,7 @@ namespace Gym
                     Console.WriteLine(" Should perform update workout ");
                     break;
                 case "view":
-                    Console.WriteLine(" Should perform read table ");
+                    Console.WriteLine(" Should perform read table for Athlets->AthletId and Workouts->AthletId");
                     break;
                 default:
                     Console.WriteLine(" The command is not found. ");
