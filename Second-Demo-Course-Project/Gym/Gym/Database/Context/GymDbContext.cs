@@ -53,12 +53,6 @@ namespace Gym.Context
             modelBuilder.Entity<Workout>()
                 .Property(w => w.Day)
                 .IsOptional();
-            modelBuilder.Entity<Workout>()
-                .Property(w => w.StartHour)
-                .IsRequired();
-            modelBuilder.Entity<Workout>()
-                .Property(w => w.EndHour)
-                .IsRequired();
               
         }
 

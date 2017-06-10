@@ -24,30 +24,55 @@ namespace Gym
 
             //  app.Run();
 
+            //Create new activity object
+            var activity = new Activity();
+            activity.Name = "Kangoo";
+            activity.Category = CategoryType.heavy;
+
+            //create new spot object
+            var spot = new Spot();
+            spot.Address = "Some address";
+            spot.Capacity = SpotCapacity.small;
+            spot.ContactNumber = "0894 123456";
+
+            //Create new trainer object
+            var trainer = new Trainer();
+            trainer.FirstName = "Gosho";
+            trainer.LastName = "Goshev";
+            trainer.Age = 28;
+
+
             // Create new athlete object
-            var newAthlete = new Athlete();
-            newAthlete.FirstName = "Pesho";
-            newAthlete.LastName = "Peshev";
-            newAthlete.Age = 25;
-            var dateTime = new DateTime(2017, 02, 02, 16, 00, 00);
-            newAthlete.Workouts.Add(new Workout {
-                StartHour = dateTime,
-                EndHour = dateTime,
+            var athlete = new Athlete();
+            athlete.FirstName = "Pesho";
+            athlete.LastName = "Peshev";
+            athlete.Age = 25;
+            athlete.Workouts.Add(new Workout {
+                WorkoutStart = "3",
+                WorkoutEnd = "4",
                 Day = DayOfWeek.Friday,
-              //  ActivityId,
-              //  TrainerId,
-              //  SpotId,
-              //  AthleteId
+                Activity = activity,
+                Trainer = trainer,
+                Spot = spot
+
             });
+            
+            
 
             using (var context = new GymDbContext())
             {
-                
-                
+
+
                 // Mark the object for inserting
-                context.Athletes.Add(newAthlete);
+                context.Spots.Add(spot);
+                context.Trainers.Add(trainer);
+                context.Activities.Add(activity);
+                context.Athletes.Add(athlete);
                 context.SaveChanges();
-                Console.WriteLine("Done");
+                Console.WriteLine("Added new Athlete");
+                Console.WriteLine("Added new Activity");
+                Console.WriteLine("Added new Trainer");
+                Console.WriteLine("Added new Spot");
 
             }
 

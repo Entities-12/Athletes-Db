@@ -12,9 +12,9 @@ namespace Gym.Models
         [Key]
         public int Id { get; set; }
 
-        public DateTime StartHour { get; set; }
+        public string WorkoutStart { get; set; }
 
-        public DateTime EndHour { get; set; }
+        public string WorkoutEnd { get; set; }
 
         public DayOfWeek Day { get; set; }
 

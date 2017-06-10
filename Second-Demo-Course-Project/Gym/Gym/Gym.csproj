@@ -190,6 +190,14 @@
     <Compile Include="Migrations\201706101926283_workouts removed many-to-many entity.Designer.cs">
       <DependentUpon>201706101926283_workouts removed many-to-many entity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706102032307_datetime to int.cs" />
+    <Compile Include="Migrations\201706102032307_datetime to int.Designer.cs">
+      <DependentUpon>201706102032307_datetime to int.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706102045500_string start and end workout hour.cs" />
+    <Compile Include="Migrations\201706102045500_string start and end workout hour.Designer.cs">
+      <DependentUpon>201706102045500_string start and end workout hour.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Athlete.cs" />
@@ -245,6 +253,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706101926283_workouts removed many-to-many entity.resx">
       <DependentUpon>201706101926283_workouts removed many-to-many entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706102032307_datetime to int.resx">
+      <DependentUpon>201706102032307_datetime to int.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706102045500_string start and end workout hour.resx">
+      <DependentUpon>201706102045500_string start and end workout hour.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
