@@ -6,12 +6,8 @@ namespace Gym.Models
 {
     public class Workout
     {
-        private ICollection<Athlete> athletes;
 
-        public Workout()
-        {
-            this.athletes = new HashSet<Athlete>();
-        }
+        public Workout(){}
 
         [Key]
         public int Id { get; set; }
@@ -29,6 +25,8 @@ namespace Gym.Models
 
         //   public int SpotID { get; set; }
 
+        //   public int AthleteID { get; set; }
+
         //WorkoutName
         public virtual Activity Activity { get; set; }
 
@@ -36,10 +34,7 @@ namespace Gym.Models
 
         public virtual Spot Spot { get; set;  }
 
-        public virtual ICollection<Athlete> Athletes
-        {
-          get { return this.athletes; }
-          set { this.athletes = value; }
-        }
+        public virtual Athlete Athletes { get; set; }
+
     }
 }

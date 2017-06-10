@@ -59,17 +59,7 @@ namespace Gym.Context
             modelBuilder.Entity<Workout>()
                 .Property(w => w.EndHour)
                 .IsRequired();
-
-            //many-to-many
-            modelBuilder.Entity<Workout>()
-                .HasMany(w => w.Athletes)
-                .WithMany(w => w.Workouts)
-                .Map(m =>
-               {
-                   m.ToTable("WorkoutsAthletes");
-                   m.MapLeftKey("WorkoutId");
-                   m.MapLeftKey("AthleteId");
-               });               
+              
         }
 
     }

@@ -23,7 +23,33 @@ namespace Gym
             //  var app = new GymApp();
 
             //  app.Run();
-            
+
+            // Create new athlete object
+            var newAthlete = new Athlete();
+            newAthlete.FirstName = "Pesho";
+            newAthlete.LastName = "Peshev";
+            newAthlete.Age = 25;
+            var dateTime = new DateTime(2017, 02, 02, 16, 00, 00);
+            newAthlete.Workouts.Add(new Workout {
+                StartHour = dateTime,
+                EndHour = dateTime,
+                Day = DayOfWeek.Friday,
+              //  ActivityId,
+              //  TrainerId,
+              //  SpotId,
+              //  AthleteId
+            });
+
+            using (var context = new GymDbContext())
+            {
+                
+                
+                // Mark the object for inserting
+                context.Athletes.Add(newAthlete);
+                context.SaveChanges();
+                Console.WriteLine("Done");
+
+            }
 
         }
     }

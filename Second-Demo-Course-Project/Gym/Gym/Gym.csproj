@@ -182,6 +182,14 @@
     <Compile Include="Migrations\201706101725378_no-changes.Designer.cs">
       <DependentUpon>201706101725378_no-changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706101902402_m.cs" />
+    <Compile Include="Migrations\201706101902402_m.Designer.cs">
+      <DependentUpon>201706101902402_m.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706101926283_workouts removed many-to-many entity.cs" />
+    <Compile Include="Migrations\201706101926283_workouts removed many-to-many entity.Designer.cs">
+      <DependentUpon>201706101926283_workouts removed many-to-many entity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Athlete.cs" />
@@ -231,6 +239,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706101725378_no-changes.resx">
       <DependentUpon>201706101725378_no-changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706101902402_m.resx">
+      <DependentUpon>201706101902402_m.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706101926283_workouts removed many-to-many entity.resx">
+      <DependentUpon>201706101926283_workouts removed many-to-many entity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
