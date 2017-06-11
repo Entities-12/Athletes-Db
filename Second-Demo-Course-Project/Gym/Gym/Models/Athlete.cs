@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace Gym.Models
 {
-    [Serializable]
+    [Serializable, XmlRoot("athlete")]
     public class Athlete : IPerson, IModel
     {
         public Athlete()
@@ -20,10 +20,13 @@ namespace Gym.Models
         [Key]
         public int Id { get; set; }
 
+        [XmlElement("FirstName")]
         public string FirstName { get; set; }
 
+        [XmlElement("LastName")]
         public string LastName { get; set; }
 
+        [XmlElement("Age")]
         public int Age { get; set; }
 
         [XmlIgnore]

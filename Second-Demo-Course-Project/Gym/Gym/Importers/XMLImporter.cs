@@ -14,31 +14,26 @@ namespace Gym.Importers
 
         public void ImportFile(string path, IDatabase db)
         {
-            if(true)
-            {
-                Console.WriteLine("The xml importer is not ready yet.");
-                return;
-            }
-
             if (db == null || path.Length == 0)
             {
                 Console.WriteLine("The past parameters are invalid.");
                 return;
             }
 
+            var context = db.GetInstance();
+
             var serializer = new XmlSerializer(typeof(Athlete));
-            var doc = new XmlDocument();
 
-            doc.Load(path);
+            using (StreamReader streamReader = new StreamReader(path))
+            {
+                var athlete = (Athlete)serializer.Deserialize(streamReader);
 
-            var xmlReader = XmlReader.Create(path);
+                context.Athletes.Add(athlete);
 
-            Athlete athlete = (Athlete)serializer.Deserialize(xmlReader);
-
-            Console.WriteLine(athlete.Age);
-
-
-            
+                context.SaveChanges();
+                
+                Console.WriteLine("Successfully Added");
+            }
         }
     }
 }
