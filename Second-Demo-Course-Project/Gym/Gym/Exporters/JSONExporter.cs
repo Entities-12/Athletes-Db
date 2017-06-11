@@ -1,18 +1,13 @@
 ﻿using Gym.DatabaseAndContext;
-using Gym.Models;
-using Gym.Models.Contracts;
-using Microsoft.EntityFrameworkCore;
+using Gym.Exporters.Contracts;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gym.Exporters
 {
-    public class JSONExporter
+    public class JSONExporter : IExporter
     {
         private string path = "../../ExportedFiles/jsonExports.json";
 

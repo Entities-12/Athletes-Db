@@ -14,13 +14,16 @@ namespace Gym
             this.JSONExporter = new JSONExporter();
             this.JSONImporter = new JSONImporter();
             this.XMLImporter = new XMLImporter();
+            this.XMLExprter = new XMLExporter();
             this.Database = new Database();
         }
 
+        public XMLExporter XMLExprter { get; private set; }
         public XMLImporter XMLImporter { get; private set; }
         private IDatabase Database { get; set; }
         private JSONExporter JSONExporter { get; set; }
         private JSONImporter JSONImporter { get; set; }
+
         public void ProcessCommand(string command)
         {
             var commandName = command.Split(' ')[0];
@@ -37,6 +40,9 @@ namespace Gym
                     break;
                 case "importXML":
                     this.XMLImporter.ImportFile(tableNameOrPath, this.Database);
+                    break;
+                case "exportXML":
+                    this.XMLExprter.ExportFile(this.Database, tableNameOrPath);
                     break;
                 default:
                     Console.WriteLine("The command is not found.");

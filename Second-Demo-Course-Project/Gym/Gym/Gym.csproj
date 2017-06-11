@@ -139,7 +139,9 @@
     <Compile Include="Database\Context\GymDbContext.cs" />
     <Compile Include="Database\Database.cs" />
     <Compile Include="Database\IDatabase.cs" />
+    <Compile Include="Exporters\Contracts\IExporter.cs" />
     <Compile Include="Exporters\JSONExporter.cs" />
+    <Compile Include="Exporters\XMLExporter.cs" />
     <Compile Include="GymApp.cs" />
     <Compile Include="Importers\Contracts\IImporter.cs" />
     <Compile Include="Importers\JSONImporter.cs" />
@@ -189,6 +191,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\athleteXMLData.xml" />
+    <Content Include="ExportedFiles\xmlExports.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

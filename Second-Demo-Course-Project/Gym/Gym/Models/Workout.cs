@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Xml.Serialization;
 
 namespace Gym.Models
 {
+    [Serializable, XmlRoot("workout")]
     public class Workout : IModel
     {
         public Workout()
