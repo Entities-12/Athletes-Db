@@ -17,6 +17,7 @@ namespace Gym
             this.Creator = new Creator();
             this.Remover = new Remover();
             this.Editor = new Editor();
+            this.Reader = new Reader();
         }
 
         private IDatabase Database { get; set; }
@@ -25,6 +26,7 @@ namespace Gym
         private Creator Creator { get; set; }
         private Remover Remover { get; set; }
         private Editor Editor { get; set; }
+        private Reader Reader { get; set; }
 
         public void ProcessCommand(string command)
         {
@@ -51,7 +53,7 @@ namespace Gym
                     break;
                 case "view":
                     Console.WriteLine(" Should perform read table for Athlets->AthletId and Workouts->AthletId");
-                   // this.Reader.OperateEntity(tableName);
+                    this.Reader.OperateEntity(tableName);
                     break;
                 default:
                     Console.WriteLine(" The command is not found. ");

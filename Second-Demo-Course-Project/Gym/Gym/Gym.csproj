@@ -142,6 +142,7 @@
     <Compile Include="DbClientOperatior\Creator.cs" />
     <Compile Include="DbClientOperatior\Editor.cs" />
     <Compile Include="DbClientOperatior\IDbClientOperatior.cs" />
+    <Compile Include="DbClientOperatior\Reader.cs" />
     <Compile Include="DbClientOperatior\Remover.cs" />
     <Compile Include="Exporters\JSONExporter.cs" />
     <Compile Include="GymApp.cs" />
