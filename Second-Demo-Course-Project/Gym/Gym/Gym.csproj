@@ -150,33 +150,9 @@
     <Compile Include="DbClientOperatior\Remover.cs" />
     <Compile Include="Exporters\IExporter.cs" />
     <Compile Include="Exporters\JSONExporter.cs" />
-    <Compile Include="Exporters\PDFExporter.cs" />
+    <Compile Include="Exporters\PDFReporter.cs" />
     <Compile Include="GymApp.cs" />
     <Compile Include="Importers\JSONImporter.cs" />
-    <Compile Include="Migrations\201706081930491_InitialCreate.cs" />
-    <Compile Include="Migrations\201706081930491_InitialCreate.Designer.cs">
-      <DependentUpon>201706081930491_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706082005413_Update trainers table..cs" />
-    <Compile Include="Migrations\201706082005413_Update trainers table..Designer.cs">
-      <DependentUpon>201706082005413_Update trainers table..cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706091644397_Updates.cs" />
-    <Compile Include="Migrations\201706091644397_Updates.Designer.cs">
-      <DependentUpon>201706091644397_Updates.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706091755244_new model.cs" />
-    <Compile Include="Migrations\201706091755244_new model.Designer.cs">
-      <DependentUpon>201706091755244_new model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706091831115_virtual properties .cs" />
-    <Compile Include="Migrations\201706091831115_virtual properties .Designer.cs">
-      <DependentUpon>201706091831115_virtual properties .cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706092023299_type-suffix of enum.cs" />
-    <Compile Include="Migrations\201706092023299_type-suffix of enum.Designer.cs">
-      <DependentUpon>201706092023299_type-suffix of enum.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201706101639181_foreign keys.cs" />
     <Compile Include="Migrations\201706101639181_foreign keys.Designer.cs">
       <DependentUpon>201706101639181_foreign keys.cs</DependentUpon>
@@ -213,10 +189,6 @@
     <Compile Include="Migrations\201706110103409_workouts-Athlete renamed.Designer.cs">
       <DependentUpon>201706110103409_workouts-Athlete renamed.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706111033571_foreign keys attributes.cs" />
-    <Compile Include="Migrations\201706111033571_foreign keys attributes.Designer.cs">
-      <DependentUpon>201706111033571_foreign keys attributes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Athlete.cs" />
@@ -237,24 +209,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706081930491_InitialCreate.resx">
-      <DependentUpon>201706081930491_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706082005413_Update trainers table..resx">
-      <DependentUpon>201706082005413_Update trainers table..cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706091644397_Updates.resx">
-      <DependentUpon>201706091644397_Updates.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706091755244_new model.resx">
-      <DependentUpon>201706091755244_new model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706091831115_virtual properties .resx">
-      <DependentUpon>201706091831115_virtual properties .cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706092023299_type-suffix of enum.resx">
-      <DependentUpon>201706092023299_type-suffix of enum.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706101639181_foreign keys.resx">
       <DependentUpon>201706101639181_foreign keys.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,9 +235,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706110103409_workouts-Athlete renamed.resx">
       <DependentUpon>201706110103409_workouts-Athlete renamed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706111033571_foreign keys attributes.resx">
-      <DependentUpon>201706111033571_foreign keys attributes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

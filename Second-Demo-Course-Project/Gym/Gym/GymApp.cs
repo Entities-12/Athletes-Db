@@ -29,6 +29,8 @@ namespace Gym
                 //Read 
                 Console.WriteLine("If you want to see your profile details type: view Athletes");
                 Console.WriteLine("If you want to see your workouts list type: view Workouts");
+                //ReportPDF
+                Console.WriteLine("If you want to see your workouts list in PDF File type:reportPDF Workouts");
                 //Exit APP 
                 Console.WriteLine("If you want to exit App type: exit");
                 var command = Console.ReadLine();

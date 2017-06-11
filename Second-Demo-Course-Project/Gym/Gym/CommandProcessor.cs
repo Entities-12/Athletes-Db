@@ -18,6 +18,7 @@ namespace Gym
             this.Remover = new Remover();
             this.Editor = new Editor();
             this.Reader = new Reader();
+            this.PDFReporter = new PDFReporter();
         }
 
         private IDatabase Database { get; set; }
@@ -27,6 +28,7 @@ namespace Gym
         private Remover Remover { get; set; }
         private Editor Editor { get; set; }
         private Reader Reader { get; set; }
+        private PDFReporter PDFReporter { get; set; }
 
         public void ProcessCommand(string command)
         {
@@ -37,6 +39,9 @@ namespace Gym
             {
                 case "exportJSON":
                     this.JSONExporter.ExportFile(this.Database, tableName);
+                    break;
+                case "reportPDF":
+                    this.PDFReporter.ReportFile(tableName);
                     break;
                 //CRUD console commands
                 case "create":
