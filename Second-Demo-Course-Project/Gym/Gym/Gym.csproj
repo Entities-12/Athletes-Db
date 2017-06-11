@@ -170,6 +170,26 @@
     <Compile Include="Migrations\201706091644397_Updates.Designer.cs">
       <DependentUpon>201706091644397_Updates.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706111849106_update activity.cs" />
+    <Compile Include="Migrations\201706111849106_update activity.Designer.cs">
+      <DependentUpon>201706111849106_update activity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706111853113_update workout.cs" />
+    <Compile Include="Migrations\201706111853113_update workout.Designer.cs">
+      <DependentUpon>201706111853113_update workout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706111856277_update spot.cs" />
+    <Compile Include="Migrations\201706111856277_update spot.Designer.cs">
+      <DependentUpon>201706111856277_update spot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706111901265_update trainer.cs" />
+    <Compile Include="Migrations\201706111901265_update trainer.Designer.cs">
+      <DependentUpon>201706111901265_update trainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706111906440_update traineragain.cs" />
+    <Compile Include="Migrations\201706111906440_update traineragain.Designer.cs">
+      <DependentUpon>201706111906440_update traineragain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Athlete.cs" />
@@ -200,6 +220,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706091644397_Updates.resx">
       <DependentUpon>201706091644397_Updates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706111849106_update activity.resx">
+      <DependentUpon>201706111849106_update activity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706111853113_update workout.resx">
+      <DependentUpon>201706111853113_update workout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706111856277_update spot.resx">
+      <DependentUpon>201706111856277_update spot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706111901265_update trainer.resx">
+      <DependentUpon>201706111901265_update trainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706111906440_update traineragain.resx">
+      <DependentUpon>201706111906440_update traineragain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

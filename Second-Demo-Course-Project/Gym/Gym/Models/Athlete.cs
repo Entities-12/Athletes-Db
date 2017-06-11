@@ -12,9 +12,12 @@ namespace Gym.Models
     [Serializable, XmlRoot("athlete")]
     public class Athlete : IPerson, IModel
     {
+
+        private ICollection<Workout> workouts;
+
         public Athlete()
         {
-            this.Workouts = new HashSet<Workout>();
+            this.workouts = new HashSet<Workout>();
         }
 
         [Key]
@@ -23,6 +26,7 @@ namespace Gym.Models
         [XmlElement("FirstName")]
         public string FirstName { get; set; }
 
+
         [XmlElement("LastName")]
         public string LastName { get; set; }
 
@@ -30,10 +34,11 @@ namespace Gym.Models
         public int Age { get; set; }
 
         [XmlIgnore]
-        public Trainer Coach { get; set; }
-
-        [XmlIgnore]
-        public virtual ICollection<Workout> Workouts { get; set; }
+        public virtual ICollection<Workout> Workouts
+        {
+            get { return this.workouts; }
+            set { this.workouts = value; }
+        }
 
     }
 }

@@ -42,7 +42,7 @@ namespace Gym.Exporters
 
         private void GetAtctivites(IDatabase db)
         {
-            var activities = db.GetInstance().Activities;
+            var activities = db.GetInstance().Activities.ToList();
 
             var serilizedActivities = JsonConvert.SerializeObject(activities);
 
@@ -70,7 +70,7 @@ namespace Gym.Exporters
 
         private void GetSpots(IDatabase db)
         {
-            var spots = db.GetInstance().Spots;
+            var spots = db.GetInstance().Spots.ToList();
 
             var serilizedSpots = JsonConvert.SerializeObject(spots);
 
@@ -84,7 +84,7 @@ namespace Gym.Exporters
 
         private void GetTrainers(IDatabase db)
         {
-            var trainers = db.GetInstance().Trainers;
+            var trainers = db.GetInstance().Trainers.ToList();
 
             var serilizedtTrainers = JsonConvert.SerializeObject(trainers);
 
@@ -98,7 +98,7 @@ namespace Gym.Exporters
 
         private void GetWorkouts(IDatabase db)
         {
-            var workouts = db.GetInstance().Workouts;
+            var workouts = db.GetInstance().Workouts.ToList();
 
             var serilizedtWorkouts = JsonConvert.SerializeObject(workouts);
 
