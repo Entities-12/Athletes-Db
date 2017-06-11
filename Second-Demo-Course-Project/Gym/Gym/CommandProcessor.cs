@@ -52,6 +52,8 @@ namespace Gym
                 case "getPostgreData":
                     this.PostgreSql.GetData(tableNameOrPath);
                     break;
+                case "app":
+                    break; 
                 default:
                     Console.WriteLine("The command is not found.");
                     break;

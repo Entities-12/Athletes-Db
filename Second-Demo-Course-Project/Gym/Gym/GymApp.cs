@@ -17,14 +17,28 @@ namespace Gym
             {
                 var command = Console.ReadLine();
 
+                if (command == "app --info")
+                {
+                    this.Info();
+                }
+
                 if (command == "exit")
                 {
                     return;
                 }
 
                 this.CommandProcessor.ProcessCommand(command);
-
             }
+        }
+
+        public void Info()
+        {
+            Console.WriteLine(@"
+                        -- exportJSON tableName
+                        -- importJSON filePath
+                        -- importXML filePath
+                        -- getPostgreData tableName
+                                ");
         }
     }
 }
