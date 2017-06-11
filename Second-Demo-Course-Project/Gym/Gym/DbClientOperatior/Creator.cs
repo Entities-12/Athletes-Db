@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace Gym.DbClientOperatior
 {
-    public class Creator
+    public class Creator: IDbClientOperatior
     {
         public Creator ()  {}
 
-        public void CreateEntity(string tableName)
+        public void OperateEntity(string tableName)
         {
             switch (tableName)
             {

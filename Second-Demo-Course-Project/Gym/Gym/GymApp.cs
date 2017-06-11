@@ -35,7 +35,7 @@ namespace Gym
 
                 if (command == "exit")
                 {
-                    Console.WriteLine("We are really sorry that you have to use are very dummy APP! Thank you! ");
+                    Console.WriteLine("We are really sorry that you have to use our very dummy APP! Thank you!");
                     return;
                 }
 

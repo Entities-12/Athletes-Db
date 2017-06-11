@@ -15,12 +15,14 @@ namespace Gym
             this.JSONImporter = new JSONImporter();
             this.Database = new Database();
             this.Creator = new Creator();
+            this.Remover = new Remover();
         }
 
         private IDatabase Database { get; set; }
         private JSONExporter JSONExporter { get; set; }
         private JSONImporter JSONImporter { get; set; }
         private Creator Creator { get; set; }
+        private Remover Remover { get; set; }
 
         public void ProcessCommand(string command)
         {
@@ -35,16 +37,19 @@ namespace Gym
                 //CRUD console commands
                 case "create":
                     Console.WriteLine(" Should perform create new athlete or workout");
-                    this.Creator.CreateEntity(tableName);
+                    this.Creator.OperateEntity(tableName);
                     break;
                 case "cancel":
-                    Console.WriteLine(" Should perform delete workout ");
+                    Console.WriteLine(" Should perform delete workout by given Id");
+                    this.Remover.OperateEntity(tableName);
                     break;
                 case "edit":
-                    Console.WriteLine(" Should perform update workout ");
+                    Console.WriteLine(" Should perform update workout by given Id");
+                 //  this.Editor.OperateEntity(tableName);
                     break;
                 case "view":
                     Console.WriteLine(" Should perform read table for Athlets->AthletId and Workouts->AthletId");
+                   // this.Reader.OperateEntity(tableName);
                     break;
                 default:
                     Console.WriteLine(" The command is not found. ");

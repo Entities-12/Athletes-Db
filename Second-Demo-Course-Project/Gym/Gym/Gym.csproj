@@ -140,6 +140,8 @@
     <Compile Include="Database\Database.cs" />
     <Compile Include="Database\IDatabase.cs" />
     <Compile Include="DbClientOperatior\Creator.cs" />
+    <Compile Include="DbClientOperatior\IDbClientOperatior.cs" />
+    <Compile Include="DbClientOperatior\Remover.cs" />
     <Compile Include="Exporters\JSONExporter.cs" />
     <Compile Include="GymApp.cs" />
     <Compile Include="Importers\JSONImporter.cs" />
