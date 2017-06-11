@@ -4,6 +4,9 @@ using Gym.Import;
 using System;
 using Gym.Context;
 using Gym.Importers;
+using Npgsql;
+using System.Data;
+using Gym.PostgreSQL;
 
 namespace Gym
 {
@@ -15,11 +18,13 @@ namespace Gym
             this.JSONImporter = new JSONImporter();
             this.XMLImporter = new XMLImporter();
             this.XMLExprter = new XMLExporter();
+            this.PostgreSql = new PostgreSql();
             this.Database = new Database();
         }
 
-        public XMLExporter XMLExprter { get; private set; }
-        public XMLImporter XMLImporter { get; private set; }
+        private PostgreSql PostgreSql { get; set; }
+        private XMLExporter XMLExprter { get; set; }
+        private XMLImporter XMLImporter { get; set; }
         private IDatabase Database { get; set; }
         private JSONExporter JSONExporter { get; set; }
         private JSONImporter JSONImporter { get; set; }
@@ -43,6 +48,9 @@ namespace Gym
                     break;
                 case "exportXML":
                     this.XMLExprter.ExportFile(this.Database, tableNameOrPath);
+                    break;
+                case "getPostgreData":
+                    this.PostgreSql.GetData(tableNameOrPath);
                     break;
                 default:
                     Console.WriteLine("The command is not found.");

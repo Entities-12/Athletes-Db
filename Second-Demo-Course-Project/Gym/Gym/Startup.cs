@@ -13,14 +13,6 @@ namespace Gym
     {
         static void Main()
         {
-
-            // For creating the database.
-            /*    using (var context = new GymDbContext())
-                {
-                    context.Database.CreateIfNotExists();
-                }*/
-
-
             var app = new GymApp();
 
             app.Run();
