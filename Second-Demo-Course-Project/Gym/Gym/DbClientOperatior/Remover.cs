@@ -24,14 +24,10 @@ namespace Gym.DbClientOperatior
                     using (var context = new GymDbContext())
                     {
                         workoutToDelete = context.Workouts.Where(w =>w.Id  == workoutId).FirstOrDefault();
-                    }
 
-                    //Create new context for disconnected scenario
-                    using (var newContext = new GymDbContext())
-                    {
-                        newContext.Entry(workoutToDelete).State = System.Data.Entity.EntityState.Deleted;
+                        context.Workouts.Remove(workoutToDelete);
 
-                        newContext.SaveChanges();
+                        context.SaveChanges();
                         Console.WriteLine("Workout with Id: {0}, was successfully canceled! Have a nice day! ", workoutId);
                     }
                     break;

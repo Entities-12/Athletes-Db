@@ -19,7 +19,7 @@ namespace Gym.Models
         public DayOfWeek Day { get; set; }
 
         //Foreign keys
-        //   public int TrainerID { get; set;  }
+         // public int TrainerID { get; set; }
 
         //   public int ActivityID { get; set; }
 
