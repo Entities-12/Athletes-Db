@@ -203,6 +203,10 @@
     <Compile Include="Migrations\201706102045500_string start and end workout hour.Designer.cs">
       <DependentUpon>201706102045500_string start and end workout hour.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706110103409_workouts-Athlete renamed.cs" />
+    <Compile Include="Migrations\201706110103409_workouts-Athlete renamed.Designer.cs">
+      <DependentUpon>201706110103409_workouts-Athlete renamed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Athlete.cs" />
@@ -264,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706102045500_string start and end workout hour.resx">
       <DependentUpon>201706102045500_string start and end workout hour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706110103409_workouts-Athlete renamed.resx">
+      <DependentUpon>201706110103409_workouts-Athlete renamed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

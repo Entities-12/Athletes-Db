@@ -34,7 +34,7 @@ namespace Gym.Models
 
         public virtual Spot Spot { get; set;  }
 
-        public virtual Athlete Athletes { get; set; }
+        public virtual Athlete Athlete { get; set; }
 
     }
 }
