@@ -23,7 +23,7 @@ namespace Gym.DbClientOperatior
                     
                     using (var context = new GymDbContext())
                     {
-                        workoutToDelete = context.Workouts.Where(w =>w.Id  == workoutId).FirstOrDefault<Workout>();
+                        workoutToDelete = context.Workouts.Where(w =>w.Id  == workoutId).FirstOrDefault();
                     }
 
                     //Create new context for disconnected scenario

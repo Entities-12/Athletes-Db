@@ -16,6 +16,7 @@ namespace Gym
             this.Database = new Database();
             this.Creator = new Creator();
             this.Remover = new Remover();
+            this.Editor = new Editor();
         }
 
         private IDatabase Database { get; set; }
@@ -23,6 +24,7 @@ namespace Gym
         private JSONImporter JSONImporter { get; set; }
         private Creator Creator { get; set; }
         private Remover Remover { get; set; }
+        private Editor Editor { get; set; }
 
         public void ProcessCommand(string command)
         {
@@ -45,7 +47,7 @@ namespace Gym
                     break;
                 case "edit":
                     Console.WriteLine(" Should perform update workout by given Id");
-                 //  this.Editor.OperateEntity(tableName);
+                    this.Editor.OperateEntity(tableName);
                     break;
                 case "view":
                     Console.WriteLine(" Should perform read table for Athlets->AthletId and Workouts->AthletId");
