@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Gym.Exporters
 {
-    public class JSONExporter
+    public class JSONExporter : IExporter
     {
         private string path = "../../ExportedFiles/jsonExports.json";
 

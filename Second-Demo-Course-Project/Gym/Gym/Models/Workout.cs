@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Gym.Models
 {
@@ -18,22 +19,22 @@ namespace Gym.Models
 
         public DayOfWeek Day { get; set; }
 
-        //Foreign keys
-         // public int TrainerID { get; set; }
+        //[ForeignKey("Activity")]
+        //public int ActivityId { get; set; }
+        //[ForeignKey("Trainer")]
+        //public int TrainerId { get; set; }
+        //[ForeignKey("Spot")]
+        //public int SpotId { get; set; }
+        //[ForeignKey("Athlete")]
+        //public int AthleteId { get; set; }
 
-        //   public int ActivityID { get; set; }
-
-        //   public int SpotID { get; set; }
-
-        //   public int AthleteID { get; set; }
-
-        //WorkoutName
+        
         public virtual Activity Activity { get; set; }
-
+        
         public virtual Trainer Trainer { get; set; }
-
+        
         public virtual Spot Spot { get; set;  }
-
+        
         public virtual Athlete Athlete { get; set; }
 
     }

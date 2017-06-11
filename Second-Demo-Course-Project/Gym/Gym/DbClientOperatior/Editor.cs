@@ -12,7 +12,7 @@ namespace Gym.DbClientOperatior
     {
         public void OperateEntity(string tableName)
         {
-            switch(tableName)
+            switch(tableName.ToLower())
             {
                 case "Workouts" :
 
