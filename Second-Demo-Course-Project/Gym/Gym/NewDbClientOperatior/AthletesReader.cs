@@ -21,8 +21,10 @@ namespace Gym.NewDbClientOperatior
             {
                 var athletes = context.Athletes.ToList();
                 athletes.Where(a => a.Id == athlethId).FirstOrDefault();
-                athletes.ForEach(a => Console.WriteLine(" YourId: " + a.Id + "\n Frst Name: "+ a.FirstName + "\n Last Name: " + a.LastName  + "\n Age: " + a.Age));
-                Console.WriteLine(athletes);
+                var id = athletes[0].Id;
+                var name = athletes[0].FirstName +" "+ athletes[0].LastName;
+                var age = athletes[0].Age;
+                Console.WriteLine("Id: {0} \nName: {1} \nAge: {2}", id, name, age);
             }
         }
     }
