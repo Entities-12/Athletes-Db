@@ -68,36 +68,23 @@ namespace Gym.Exporters
         {
             DataTable filledTable = new DataTable();
 
-            // Console.WriteLine("Provide your Id");
-            // var athlethId = Convert.ToInt32(Console.ReadLine());
-
             using (var context = new GymDbContext())
             {
                 var profileDetails = context.Athletes.ToList();
-                // profileDetails.Where(a => a.Id == athlethId).FirstOrDefault();
                 var id = profileDetails.Select(a => a.Id).ToList();
                 var firstName = profileDetails.Select(a => a.FirstName).ToList();
                 var lastName = profileDetails.Select(a => a.LastName).ToList();
                 var age = profileDetails.Select(a => a.Age).ToList();
 
-
-
                 filledTable.Columns.Add("id");
                 filledTable.Columns.Add("First Name");
                 filledTable.Columns.Add("Last Name");
                 filledTable.Columns.Add("Age");
+
                 for (var i = 0; i < id.Count; i++)
                 {
-                    for (var j = 0; j < firstName.Count - i; j++)
-                    {
-                        for (var k = 0; k < lastName.Count - j - i; k++)
-                        {
-                            for (var m = 0; m < age.Count - k - j -i; m++)
-                            {
-                                filledTable.Rows.Add(id[i], firstName[j], lastName[k], age[m]);
-                            }
-                        }
-                    }
+                    filledTable.Rows.Add(id[i], firstName[i], lastName[i], age[i]);
+
                 }
 
             }
