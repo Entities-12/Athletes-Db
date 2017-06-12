@@ -32,7 +32,7 @@ namespace Gym
                 Console.WriteLine("If you want to see your profile details type: \"viewProfile\" ");
                 Console.WriteLine("If you want to see your workouts list type: \"viewWorkouts\" ");
                 //ReportPDF
-                Console.WriteLine("If you want to see your workouts list in PDF File type: \"reportPDF workouts\" ");
+                Console.WriteLine("If you want to see your workouts list in PDF File type: \"reportPDF Athletes\" ");
                 //Exit APP 
                 Console.WriteLine("If you want to exit App type: exit");
                 var command = Console.ReadLine();

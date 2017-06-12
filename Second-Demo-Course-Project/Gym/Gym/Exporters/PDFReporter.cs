@@ -21,12 +21,12 @@ namespace Gym.Exporters
 
         public void ReportFile()
         {
-                    Console.WriteLine("Loading PDF Report");
-                    DataTable dtbl = fillDataTable();
-                    ExportDataTableToPdf(dtbl, path);
-                    System.Diagnostics.Process.Start(path);
-                    Console.WriteLine("go to ExportedFiles and check!");
-                   
+            Console.WriteLine("Loading PDF Report");
+            DataTable dtbl = fillDataTable();
+            ExportDataTableToPdf(dtbl, path);
+            System.Diagnostics.Process.Start(path);
+            Console.WriteLine("go to ExportedFiles and check!");
+
         }
 
         void ExportDataTableToPdf(DataTable dbTable, String pdfPath)
@@ -64,27 +64,42 @@ namespace Gym.Exporters
         }
 
         public DataTable fillDataTable()
+
         {
             DataTable filledTable = new DataTable();
 
-            Console.WriteLine("Provide your Id");
-            var athlethId = Convert.ToInt32(Console.ReadLine());
+            // Console.WriteLine("Provide your Id");
+            // var athlethId = Convert.ToInt32(Console.ReadLine());
 
             using (var context = new GymDbContext())
             {
                 var profileDetails = context.Athletes.ToList();
-                profileDetails.Where(a => a.Id == athlethId).FirstOrDefault();
+                // profileDetails.Where(a => a.Id == athlethId).FirstOrDefault();
                 var id = profileDetails.Select(a => a.Id).ToList();
+                var firstName = profileDetails.Select(a => a.FirstName).ToList();
+                var lastName = profileDetails.Select(a => a.LastName).ToList();
+                var age = profileDetails.Select(a => a.Age).ToList();
+
 
 
                 filledTable.Columns.Add("id");
-                filledTable.Rows.Add(id[0]);
-                filledTable.Columns.Add("colxss");
-                filledTable.Rows.Add("rowsds");
-                filledTable.Columns.Add("colsdd");
-                filledTable.Rows.Add("rows");
-                filledTable.Columns.Add("cold");
-                filledTable.Rows.Add("rowhmmm");
+                filledTable.Columns.Add("First Name");
+                filledTable.Columns.Add("Last Name");
+                filledTable.Columns.Add("Age");
+                for (var i = 0; i < id.Count; i++)
+                {
+                    for (var j = 0; j < firstName.Count - i; j++)
+                    {
+                        for (var k = 0; k < lastName.Count - j - i; k++)
+                        {
+                            for (var m = 0; m < age.Count - k - j -i; m++)
+                            {
+                                filledTable.Rows.Add(id[i], firstName[j], lastName[k], age[m]);
+                            }
+                        }
+                    }
+                }
+
             }
 
             return filledTable;
