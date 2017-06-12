@@ -29,14 +29,6 @@ namespace Gym.NewDbClientOperatior
                 Console.WriteLine("Pick new hour for end of the workout");
                 workoutToEdit.WorkoutEnd = Console.ReadLine();
 
-                var trainer = new Trainer();
-                workoutToEdit.Trainer = trainer;
-
-                var spot = new Spot();
-                workoutToEdit.Spot = spot;
-
-                var activity = new Activity();
-                workoutToEdit.Trainer = trainer;
             }
 
             using (var dbCtx = new GymDbContext())
