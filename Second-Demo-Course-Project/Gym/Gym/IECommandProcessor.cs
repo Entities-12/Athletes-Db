@@ -7,12 +7,13 @@ using Gym.Importers;
 using Npgsql;
 using System.Data;
 using Gym.PostgreSQL;
+using Gym.Contracts;
 
 namespace Gym
 {
-    public class CommandProcessor
+    public class IECommandProcessor : ICommand
     {
-        public CommandProcessor()
+        public IECommandProcessor()
         {
             this.JSONExporter = new JSONExporter();
             this.JSONImporter = new JSONImporter();
@@ -29,7 +30,8 @@ namespace Gym
         private IDatabase Database { get; set; }
         private JSONExporter JSONExporter { get; set; }
         private JSONImporter JSONImporter { get; set; }
-        public PDFReporter PDFReporter { get; private set; }
+        private PDFReporter PDFReporter { get; set; }
+
 
         public void ProcessCommand(string command)
         {
@@ -54,13 +56,13 @@ namespace Gym
                 case "getPostgreData":
                     this.PostgreSql.GetData(tableNameOrPath);
                     break;
-                case "reportPDF":
-                    this.PDFReporter.ReportFile();
-                    break;
                 case "app":
                     break; 
+                case "reportPDF":
+                    this.PDFReporter.ReportFile();
+                    break;                
                 default:
-                    Console.WriteLine("The command is not found.");
+                    Console.WriteLine(" The command is not found. ");
                     break;
             }
         }

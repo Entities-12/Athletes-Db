@@ -16,14 +16,14 @@ namespace Gym.PostgreSQL
                 psql.Open();
 
                 var command = new NpgsqlCommand("select * from " + tableName, psql);
-                
+
                 var result = command.ExecuteReader();
-                
-                while(result.Read())
+
+                while (result.Read())
                 {
                     Console.WriteLine("ID: " + result[0] + " Name: " + result[1]);
                 }
-                
+
                 psql.Close();
             }
         }

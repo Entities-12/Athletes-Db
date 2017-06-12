@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Gym.Models
 {
@@ -21,13 +22,13 @@ namespace Gym.Models
         public DayOfWeek Day { get; set; }
 
         //[ForeignKey("Activity")]
-        //public int ActivityId { get; set; }
+        public int? ActivityId { get; set; }
         //[ForeignKey("Trainer")]
-        //public int TrainerId { get; set; }
+        public int? TrainerId { get; set; }
         //[ForeignKey("Spot")]
-        //public int SpotId { get; set; }
+        public int? SpotId { get; set; }
         //[ForeignKey("Athlete")]
-        //public int AthleteId { get; set; }
+        public int? AthleteId { get; set; }
 
 
         public virtual Activity Activity { get; set; }

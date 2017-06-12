@@ -57,6 +57,7 @@ namespace Gym.Exporters
         private void GetAthletes(IDatabase db)
         {
             var athletes = db.GetInstance().Athletes.ToList();
+            Console.WriteLine(athletes.Count);
 
             var serilizedAthletes = JsonConvert.SerializeObject(athletes);
 

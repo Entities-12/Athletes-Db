@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gym.Models.Enums
+namespace Gym.NewDbClientOperatior.Contracts
 {
-    public enum Category
+    public interface IDbClientOperatior
     {
-        light,
-        heavy
+        void OperateEntity();
     }
 }

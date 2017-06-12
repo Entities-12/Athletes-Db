@@ -21,7 +21,7 @@ namespace Gym.Models
 
         public string Name { get; set; }
 
-        public Category Category { get; set; }
+        public CategoryType Category { get; set; }
 
         public virtual ICollection<Workout> Workouts
         {
