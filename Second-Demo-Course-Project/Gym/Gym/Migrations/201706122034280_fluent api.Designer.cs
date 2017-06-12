@@ -7,13 +7,13 @@ namespace Gym.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class props : IMigrationMetadata
+    public sealed partial class fluentapi : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(props));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(fluentapi));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706121955255_props"; }
+            get { return "201706122034280_fluent api"; }
         }
         
         string IMigrationMetadata.Source

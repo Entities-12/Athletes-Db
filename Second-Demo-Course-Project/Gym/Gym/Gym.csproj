@@ -165,9 +165,9 @@
     <Compile Include="Importers\Contracts\IImporter.cs" />
     <Compile Include="Importers\JSONImporter.cs" />
     <Compile Include="Importers\XMLImporter.cs" />
-    <Compile Include="Migrations\201706121955255_props.cs" />
-    <Compile Include="Migrations\201706121955255_props.Designer.cs">
-      <DependentUpon>201706121955255_props.cs</DependentUpon>
+    <Compile Include="Migrations\201706122034280_fluent api.cs" />
+    <Compile Include="Migrations\201706122034280_fluent api.Designer.cs">
+      <DependentUpon>201706122034280_fluent api.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
@@ -202,8 +202,8 @@
     <Content Include="ExportedFiles\xmlExports.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706121955255_props.resx">
-      <DependentUpon>201706121955255_props.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706122034280_fluent api.resx">
+      <DependentUpon>201706122034280_fluent api.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
