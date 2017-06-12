@@ -24,6 +24,7 @@ namespace Gym.DbClientOperatior
             {
                 workoutToDelete = context.Workouts.Where(w =>w.Id  == workoutId).FirstOrDefault();
 
+                   
                 context.Workouts.Remove(workoutToDelete);
 
                 context.SaveChanges();

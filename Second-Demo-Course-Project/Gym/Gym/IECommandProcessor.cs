@@ -35,7 +35,7 @@ namespace Gym
                     this.JSONExporter.ExportFile(this.Database, tableName);
                     break;
                 case "reportPDF":
-                    this.PDFReporter.ReportFile(tableName);
+                    this.PDFReporter.ReportFile();
                     break;                
                 default:
                     Console.WriteLine(" The command is not found. ");

@@ -20,9 +20,9 @@ namespace Gym
                 {
                     context.Database.CreateIfNotExists();
                 }
-              var app = new GymApp();
+            var app = new GymApp();
 
-              app.Run();
+            app.Run();
 
             ////Create new activity object
             //var activity = new Activity();
@@ -47,7 +47,8 @@ namespace Gym
             //athlete.FirstName = "Pesho";
             //athlete.LastName = "Peshev";
             //athlete.Age = 25;
-            //athlete.Workouts.Add(new Workout {
+            //athlete.Workouts.Add(new Workout
+            //{
             //    WorkoutStart = "3",
             //    WorkoutEnd = "4",
             //    Day = DayOfWeek.Friday,
@@ -56,8 +57,8 @@ namespace Gym
             //    Spot = spot
 
             //});
-            
-            
+
+
 
             //using (var context = new GymDbContext())
             //{

@@ -14,25 +14,19 @@ namespace Gym.Exporters
 {
     public class PDFReporter
     {
-        private string path = "../../ExportedFiles/pdfexports.pdf";
+        //private string path = @"../../ExportedFiles/pdfexport.pdf";
+        private string path = @"D:\test.pdf";
 
         public PDFReporter() { }
 
-        public void ReportFile(string table)
+        public void ReportFile()
         {
-            switch (table.ToLower())
-            {
-                case "workouts":
                     Console.WriteLine("Loading PDF Report");
-                    DataTable workouts = fillDataTable(table);
-                    ExportDataTableToPdf(workouts, path);
+                    DataTable dtbl = fillDataTable();
+                    ExportDataTableToPdf(dtbl, path);
                     System.Diagnostics.Process.Start(path);
                     Console.WriteLine("go to ExportedFiles and check!");
-                    break;
-                default:
-                    Console.WriteLine("The table is NOT FOUND!");
-                    return;
-            }
+                   
         }
 
         void ExportDataTableToPdf(DataTable dbTable, String pdfPath)
@@ -47,12 +41,11 @@ namespace Gym.Exporters
             PdfPTable pdfTable = new PdfPTable(dbTable.Columns.Count);
             //Table header
             BaseFont btnColumnHeader = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
-            Font fntColumnHeader = new Font(btnColumnHeader, 10, 1, Color.WHITE);
             for (int i = 0; i < dbTable.Columns.Count; i++)
             {
                 PdfPCell cell = new PdfPCell();
-                cell.BackgroundColor = Color.GRAY;
-                cell.AddElement(new Chunk(dbTable.Columns[i].ColumnName.ToUpper(), fntColumnHeader));
+
+                cell.AddElement(new Chunk(dbTable.Columns[i].ColumnName.ToUpper()));
                 pdfTable.AddCell(cell);
             }
             //table Data
@@ -70,40 +63,30 @@ namespace Gym.Exporters
             fs.Close();
         }
 
-        public DataTable fillDataTable(string table)
+        public DataTable fillDataTable()
         {
             DataTable filledTable = new DataTable();
-            string query = "SELECT * FROM " + table;
-            string connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
-           using (SqlConnection con = new SqlConnection(connString))
-           {
+            Console.WriteLine("Provide your Id");
+            var athlethId = Convert.ToInt32(Console.ReadLine());
 
-                con.Open();
+            using (var context = new GymDbContext())
+            {
+                var profileDetails = context.Athletes.ToList();
+                profileDetails.Where(a => a.Id == athlethId).FirstOrDefault();
+                var id = profileDetails.Select(a => a.Id).ToList();
 
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                    {
-                        
-                            DataTable dt = new DataTable();
-                            da.Fill(dt);
-                            con.Close();
-                            filledTable = dt;
-                        
-                    } // reader closed and disposed up here
 
-                } // command disposed here
+                filledTable.Columns.Add("id");
+                filledTable.Rows.Add(id[0]);
+                filledTable.Columns.Add("colxss");
+                filledTable.Rows.Add("rowsds");
+                filledTable.Columns.Add("colsdd");
+                filledTable.Rows.Add("rows");
+                filledTable.Columns.Add("cold");
+                filledTable.Rows.Add("rowhmmm");
+            }
 
-            } //connection closed and disposed here
-
-            //SqlConnection sqlConn = new SqlConnection(connString);
-            //SqlCommand cmd = new SqlCommand(query, sqlConn);
-            //SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //DataTable dt = new DataTable();
-            //da.Fill(dt);
-            //sqlConn.Close();
-            //return dt;
             return filledTable;
         }
     }

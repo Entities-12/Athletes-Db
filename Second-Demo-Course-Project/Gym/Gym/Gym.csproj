@@ -157,55 +157,6 @@
     <Compile Include="Exporters\PDFReporter.cs" />
     <Compile Include="GymApp.cs" />
     <Compile Include="Importers\JSONImporter.cs" />
-    <Compile Include="Migrations\201706101639181_foreign keys.cs" />
-    <Compile Include="Migrations\201706101639181_foreign keys.Designer.cs">
-      <DependentUpon>201706101639181_foreign keys.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706101711151_Trainers foreign key property - SpotID added.cs" />
-    <Compile Include="Migrations\201706101711151_Trainers foreign key property - SpotID added.Designer.cs">
-      <DependentUpon>201706101711151_Trainers foreign key property - SpotID added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706101716250_spot entity in workouts.cs" />
-    <Compile Include="Migrations\201706101716250_spot entity in workouts.Designer.cs">
-      <DependentUpon>201706101716250_spot entity in workouts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706101725378_no-changes.cs" />
-    <Compile Include="Migrations\201706101725378_no-changes.Designer.cs">
-      <DependentUpon>201706101725378_no-changes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706101902402_m.cs" />
-    <Compile Include="Migrations\201706101902402_m.Designer.cs">
-      <DependentUpon>201706101902402_m.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706101926283_workouts removed many-to-many entity.cs" />
-    <Compile Include="Migrations\201706101926283_workouts removed many-to-many entity.Designer.cs">
-      <DependentUpon>201706101926283_workouts removed many-to-many entity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706102032307_datetime to int.cs" />
-    <Compile Include="Migrations\201706102032307_datetime to int.Designer.cs">
-      <DependentUpon>201706102032307_datetime to int.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706102045500_string start and end workout hour.cs" />
-    <Compile Include="Migrations\201706102045500_string start and end workout hour.Designer.cs">
-      <DependentUpon>201706102045500_string start and end workout hour.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706110103409_workouts-Athlete renamed.cs" />
-    <Compile Include="Migrations\201706110103409_workouts-Athlete renamed.Designer.cs">
-      <DependentUpon>201706110103409_workouts-Athlete renamed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706120823453_foreignkey.cs" />
-    <Compile Include="Migrations\201706120823453_foreignkey.Designer.cs">
-      <DependentUpon>201706120823453_foreignkey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706120840211_keys of workouts.cs" />
-    <Compile Include="Migrations\201706120840211_keys of workouts.Designer.cs">
-      <DependentUpon>201706120840211_keys of workouts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706120841598_sport renamed activity again.cs" />
-    <Compile Include="Migrations\201706120841598_sport renamed activity again.Designer.cs">
-      <DependentUpon>201706120841598_sport renamed activity again.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Athlete.cs" />
     <Compile Include="Models\Enums\CategoryType.cs" />
@@ -223,44 +174,6 @@
     <None Include="Data\data.json" />
     <None Include="ExportedFiles\jsonExports.json" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706101639181_foreign keys.resx">
-      <DependentUpon>201706101639181_foreign keys.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706101711151_Trainers foreign key property - SpotID added.resx">
-      <DependentUpon>201706101711151_Trainers foreign key property - SpotID added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706101716250_spot entity in workouts.resx">
-      <DependentUpon>201706101716250_spot entity in workouts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706101725378_no-changes.resx">
-      <DependentUpon>201706101725378_no-changes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706101902402_m.resx">
-      <DependentUpon>201706101902402_m.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706101926283_workouts removed many-to-many entity.resx">
-      <DependentUpon>201706101926283_workouts removed many-to-many entity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706102032307_datetime to int.resx">
-      <DependentUpon>201706102032307_datetime to int.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706102045500_string start and end workout hour.resx">
-      <DependentUpon>201706102045500_string start and end workout hour.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706110103409_workouts-Athlete renamed.resx">
-      <DependentUpon>201706110103409_workouts-Athlete renamed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706120823453_foreignkey.resx">
-      <DependentUpon>201706120823453_foreignkey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706120840211_keys of workouts.resx">
-      <DependentUpon>201706120840211_keys of workouts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706120841598_sport renamed activity again.resx">
-      <DependentUpon>201706120841598_sport renamed activity again.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
