@@ -139,15 +139,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandProcessor.cs" />
+    <Compile Include="Contracts\ICommand.cs" />
+    <Compile Include="IECommandProcessor.cs" />
+    <Compile Include="CRUDCommandProcessor.cs" />
     <Compile Include="Database\Context\GymDbContext.cs" />
     <Compile Include="Database\Database.cs" />
     <Compile Include="Database\IDatabase.cs" />
-    <Compile Include="DbClientOperatior\Creator.cs" />
-    <Compile Include="DbClientOperatior\Editor.cs" />
-    <Compile Include="DbClientOperatior\IDbClientOperatior.cs" />
-    <Compile Include="DbClientOperatior\Reader.cs" />
-    <Compile Include="DbClientOperatior\Remover.cs" />
+    <Compile Include="DbClientOperatior\AthletesCreator.cs" />
+    <Compile Include="DbClientOperatior\AthletesReader.cs" />
+    <Compile Include="DbClientOperatior\WorkoutsCreator.cs" />
+    <Compile Include="DbClientOperatior\WorkoutsEditor.cs" />
+    <Compile Include="DbClientOperatior\Contracts\IDbClientOperatior.cs" />
+    <Compile Include="DbClientOperatior\WorkoutsReader.cs" />
+    <Compile Include="DbClientOperatior\WorkoutsRemover.cs" />
     <Compile Include="Exporters\IExporter.cs" />
     <Compile Include="Exporters\JSONExporter.cs" />
     <Compile Include="Exporters\PDFReporter.cs" />
@@ -188,6 +192,18 @@
     <Compile Include="Migrations\201706110103409_workouts-Athlete renamed.cs" />
     <Compile Include="Migrations\201706110103409_workouts-Athlete renamed.Designer.cs">
       <DependentUpon>201706110103409_workouts-Athlete renamed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706120823453_foreignkey.cs" />
+    <Compile Include="Migrations\201706120823453_foreignkey.Designer.cs">
+      <DependentUpon>201706120823453_foreignkey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706120840211_keys of workouts.cs" />
+    <Compile Include="Migrations\201706120840211_keys of workouts.Designer.cs">
+      <DependentUpon>201706120840211_keys of workouts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706120841598_sport renamed activity again.cs" />
+    <Compile Include="Migrations\201706120841598_sport renamed activity again.Designer.cs">
+      <DependentUpon>201706120841598_sport renamed activity again.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
@@ -235,6 +251,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706110103409_workouts-Athlete renamed.resx">
       <DependentUpon>201706110103409_workouts-Athlete renamed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706120823453_foreignkey.resx">
+      <DependentUpon>201706120823453_foreignkey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706120840211_keys of workouts.resx">
+      <DependentUpon>201706120840211_keys of workouts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706120841598_sport renamed activity again.resx">
+      <DependentUpon>201706120841598_sport renamed activity again.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

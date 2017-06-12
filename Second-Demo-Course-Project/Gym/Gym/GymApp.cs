@@ -6,10 +6,12 @@ namespace Gym
     {
         public GymApp()
         {
-            this.CommandProcessor = new CommandProcessor();
+            this.IEProcessor = new IECommandProcessor();
+            this.CRUDProcessor = new CRUDCommandProcessor();
         }
 
-        public CommandProcessor CommandProcessor { get; private set; }
+        public IECommandProcessor IEProcessor { get; private set; }
+        public CRUDCommandProcessor CRUDProcessor { get; private set; }
 
         public void Run()
         {
@@ -18,19 +20,19 @@ namespace Gym
                 //Commands List
                 Console.WriteLine("-- Welcome to our Dummy App for Workouts --");
                 //Export JSON 
-                Console.WriteLine("If you want to make Export with JSON type: exportJSON and as second type name of the table");
+                Console.WriteLine("If you want to make Export with JSON type: \"exportJSON _\" as second type name of the table ");
                 //Create 
-                Console.WriteLine("If you want to sign up  type: create Athletes");
-                Console.WriteLine("If you want to book new Workout type: create Workouts");
+                Console.WriteLine("If you want to sign up  type: \"createProfile\" ");
+                Console.WriteLine("If you want to book new Workout type: \"bookWorkout\" ");
                 //Delete 
-                Console.WriteLine("If you want to cancel your workout type: cancel Workouts");
+                Console.WriteLine("If you want to cancel your workout type: \"cancelWorkout\" ");
                 //Update 
-                Console.WriteLine("If you want to change your workout type: edit Workouts");
+                Console.WriteLine("If you want to change your workout type: \"editWorkout\" ");
                 //Read 
-                Console.WriteLine("If you want to see your profile details type: view Athletes");
-                Console.WriteLine("If you want to see your workouts list type: view Workouts");
+                Console.WriteLine("If you want to see your profile details type: \"viewProfile\" ");
+                Console.WriteLine("If you want to see your workouts list type: \"viewWorkouts\" ");
                 //ReportPDF
-                Console.WriteLine("If you want to see your workouts list in PDF File type:reportPDF Workouts");
+                Console.WriteLine("If you want to see your workouts list in PDF File type: \"reportPDF workouts\" ");
                 //Exit APP 
                 Console.WriteLine("If you want to exit App type: exit");
                 var command = Console.ReadLine();
@@ -40,8 +42,20 @@ namespace Gym
                     Console.WriteLine("We are really sorry that you have to use our very dummy APP! Thank you!");
                     return;
                 }
-
-                this.CommandProcessor.ProcessCommand(command);
+                if(command.Contains("exportJSON") ||
+                   command.Contains("reportPDF"))
+                {
+                    this.IEProcessor.ProcessCommand(command);
+                }
+                if(command.Contains("bookWorkout") ||
+                   command.Contains("createProfile") ||
+                   command.Contains("cancelWorkout") ||
+                   command.Contains("editWorkout") ||
+                   command.Contains("viewProfile") ||
+                   command.Contains("viewWorkouts") )
+                { 
+                this.CRUDProcessor.ProcessCommand(command);
+                }
 
             }
         }
