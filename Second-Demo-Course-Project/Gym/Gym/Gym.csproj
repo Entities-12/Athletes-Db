@@ -45,9 +45,9 @@
       <HintPath>..\packages\EntityFramework6.Npgsql.3.1.1\lib\net45\EntityFramework6.Npgsql.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\itextsharp.dll</HintPath>
+    <Reference Include="itextsharp, Version=5.5.11.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.11\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Abstractions.1.1.1\lib\net451\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
@@ -162,12 +162,17 @@
     <Compile Include="Exporters\PDFReporter.cs" />
     <Compile Include="GymApp.cs" />
     <Compile Include="ICommand.cs" />
+    <Compile Include="ICommandParser.cs" />
     <Compile Include="Importers\Contracts\IImporter.cs" />
     <Compile Include="Importers\JSONImporter.cs" />
     <Compile Include="Importers\XMLImporter.cs" />
     <Compile Include="Migrations\201706122034280_fluent api.cs" />
     <Compile Include="Migrations\201706122034280_fluent api.Designer.cs">
       <DependentUpon>201706122034280_fluent api.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706130216393_new models.cs" />
+    <Compile Include="Migrations\201706130216393_new models.Designer.cs">
+      <DependentUpon>201706130216393_new models.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
@@ -186,6 +191,7 @@
     <Compile Include="NewDbClientOperatior\WorkoutsEditor.cs" />
     <Compile Include="NewDbClientOperatior\WorkoutsReader.cs" />
     <Compile Include="NewDbClientOperatior\WorkoutsRemover.cs" />
+    <Compile Include="PostgreSQL\IPostgreSql.cs" />
     <Compile Include="PostgreSQL\PostgreSql.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -204,6 +210,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706122034280_fluent api.resx">
       <DependentUpon>201706122034280_fluent api.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706130216393_new models.resx">
+      <DependentUpon>201706130216393_new models.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

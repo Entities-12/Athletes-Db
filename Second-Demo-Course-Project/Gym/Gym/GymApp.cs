@@ -1,12 +1,16 @@
-﻿using System;
+﻿using Gym.DatabaseAndContext;
+using Gym.Exporters;
+using Gym.Import;
+using Gym.Importers;
+using System;
 
 namespace Gym
 {
     public class GymApp
     {
-        public GymApp()
+        public GymApp(CommandProcessor commandParser)
         {
-            this.CommandProcessor = new CommandProcessor();
+            this.CommandProcessor = commandParser;
             this.CRUDCommandProcessor = new CRUDCommandProcessor();
         }
 
@@ -15,26 +19,11 @@ namespace Gym
 
         public void Run()
         {
+
+            this.DisplayInfo();
+
             while (true)
             {
-                //Commands List
-                Console.WriteLine("-- Welcome to our Dummy App for Workouts --");
-                //Export JSON 
-                Console.WriteLine("If you want to make Export with JSON type: \"exportJSON _\" as second type name of the table ");
-                //Create 
-                Console.WriteLine("If you want to sign up  type: \"createProfile\" ");
-                Console.WriteLine("If you want to book new Workout type: \"bookWorkout\" ");
-                //Delete 
-                Console.WriteLine("If you want to cancel your workout type: \"cancelWorkout\" ");
-                //Update 
-                Console.WriteLine("If you want to change your workout type: \"editWorkout\" ");
-                //Read 
-                Console.WriteLine("If you want to see your profile details type: \"viewProfile\" ");
-                Console.WriteLine("If you want to see your workouts list type: \"viewWorkouts\" ");
-                //ReportPDF
-                Console.WriteLine("If you want to see all Athletes type: \"reportPDF Athletes\" ");
-                //Exit APP 
-                Console.WriteLine("If you want to exit App type: exit");
                 var command = Console.ReadLine();
 
                 if (command == "exit")
@@ -43,7 +32,10 @@ namespace Gym
                     return;
                 }
                 if (command.Contains("exportJSON") ||
-                   command.Contains("reportPDF"))
+                    command.Contains("importJSON") ||
+                    command.Contains("importXML") ||
+                    command.Contains("getPostgreData") ||
+                    command.Contains("reportPDF"))
                 {
                     this.CommandProcessor.ProcessCommand(command);
                 }
@@ -59,6 +51,27 @@ namespace Gym
             }
         }
 
-        
+        public void DisplayInfo()
+        {
+            var info = @"
+                        -- Welcome to our Dummy App for Workouts --
+                        If you want to make Export with JSON type: exportJSON as second type name of the table 
+                        If you want to make Import with JSON type: importJSON as second type name of the table
+                        If you want to make Export with XML type: exportXML as second type name of the table  
+                        If you want to make Import with XML type: importXML as second type name of the table 
+                        If you want to sign up  type: createProfile
+                        If you want to book new Workout type: bookWorkout
+                        If you want to change your workout type: editWorkout
+                        If you want to see your profile details type: viewProfile
+                        If you want to see your workouts list type: viewWorkouts
+                        If you want to see all Athletes type: reportPDF Athletes
+                        If you want to exit App type: exit
+
+                        ";
+
+            Console.WriteLine(info);
+        }
+
+
     }
 }

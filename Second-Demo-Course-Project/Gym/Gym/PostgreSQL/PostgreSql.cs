@@ -3,7 +3,7 @@ using System;
 
 namespace Gym.PostgreSQL
 {
-    public class PostgreSql
+    public class PostgreSql : IPostgreSql
     {
         private string conntectionString = "server=localhost;user id=postgres;password=3343568;database=Gym";
 

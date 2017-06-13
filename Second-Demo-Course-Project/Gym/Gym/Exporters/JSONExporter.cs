@@ -15,10 +15,10 @@ namespace Gym.Exporters
 
         public void ExportFile(IDatabase db, string table)
         {
-            switch(table.ToLower())
+            switch (table.ToLower())
             {
                 case "activities":
-                     this.GetAtctivites(db);
+                    this.GetAtctivites(db);
                     break;
                 case "athletes":
                     this.GetAthletes(db);
@@ -34,9 +34,9 @@ namespace Gym.Exporters
                     break;
                 default:
                     Console.WriteLine("The table is NOT FOUND!");
-                    return;               
+                    return;
             }
-        } 
+        }
 
 
 
@@ -44,7 +44,11 @@ namespace Gym.Exporters
         {
             var activities = db.GetInstance().Activities.ToList();
 
-            var serilizedActivities = JsonConvert.SerializeObject(activities);
+            var serilizedActivities = JsonConvert.SerializeObject(activities, Formatting.Indented,
+                                                                              new JsonSerializerSettings()
+                                                                              {
+                                                                                  ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                                                                              });
 
             using (var file = new StreamWriter(this.path))
             {
@@ -57,9 +61,12 @@ namespace Gym.Exporters
         private void GetAthletes(IDatabase db)
         {
             var athletes = db.GetInstance().Athletes.ToList();
-            Console.WriteLine(athletes.Count);
 
-            var serilizedAthletes = JsonConvert.SerializeObject(athletes);
+            var serilizedAthletes = JsonConvert.SerializeObject(athletes, Formatting.Indented,
+                                                                          new JsonSerializerSettings()
+                                                                          {
+                                                                              ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                                                                          });
 
             using (var file = new StreamWriter(this.path))
             {
@@ -73,7 +80,12 @@ namespace Gym.Exporters
         {
             var spots = db.GetInstance().Spots.ToList();
 
-            var serilizedSpots = JsonConvert.SerializeObject(spots);
+            var serilizedSpots = JsonConvert.SerializeObject(spots, Formatting.Indented,
+                                                                    new JsonSerializerSettings()
+                                                                    {
+                                                                        ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                                                                    });
+
 
             using (var file = new StreamWriter(this.path))
             {
@@ -87,7 +99,11 @@ namespace Gym.Exporters
         {
             var trainers = db.GetInstance().Trainers.ToList();
 
-            var serilizedtTrainers = JsonConvert.SerializeObject(trainers);
+            var serilizedtTrainers = JsonConvert.SerializeObject(trainers, Formatting.Indented,
+                                                                           new JsonSerializerSettings()
+                                                                           {
+                                                                               ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                                                                           });
 
             using (var file = new StreamWriter(this.path))
             {
@@ -101,7 +117,11 @@ namespace Gym.Exporters
         {
             var workouts = db.GetInstance().Workouts.ToList();
 
-            var serilizedtWorkouts = JsonConvert.SerializeObject(workouts);
+            var serilizedtWorkouts = JsonConvert.SerializeObject(workouts, Formatting.Indented,
+                                                                           new JsonSerializerSettings()
+                                                                           {
+                                                                               ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                                                                           });
 
             using (var file = new StreamWriter(this.path))
             {

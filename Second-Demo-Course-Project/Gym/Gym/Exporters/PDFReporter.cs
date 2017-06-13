@@ -86,18 +86,10 @@ namespace Gym.Exporters
                 filledTable.Columns.Add("First Name");
                 filledTable.Columns.Add("Last Name");
                 filledTable.Columns.Add("Age");
+
                 for (var i = 0; i < id.Count; i++)
                 {
-                    for (var j = 0; j < firstName.Count - i; j++)
-                    {
-                        for (var k = 0; k < lastName.Count - j - i; k++)
-                        {
-                            for (var m = 0; m < age.Count - k - j -i; m++)
-                            {
-                                filledTable.Rows.Add(id[i], firstName[j], lastName[k], age[m]);
-                            }
-                        }
-                    }
+                    filledTable.Rows.Add(id[i], firstName[i], lastName[i], age[i]);      
                 }
 
             }

@@ -7,36 +7,38 @@ using Gym.Importers;
 using Npgsql;
 using System.Data;
 using Gym.PostgreSQL;
+using Gym.Exporters.Contracts;
+using Gym.Importers.Contracts;
 
 namespace Gym
 {
-    public class CommandProcessor
+    public class CommandProcessor : ICommandParser
     {
-        public CommandProcessor()
+        public CommandProcessor(IDatabase database, IExporter xmlExporter, IExporter jsonExporter,
+                                 IImporter xmlImporter, IImporter jsonImporter)
         {
-            this.JSONExporter = new JSONExporter();
-            this.JSONImporter = new JSONImporter();
-            this.XMLImporter = new XMLImporter();
-            this.XMLExprter = new XMLExporter();
+            this.JSONExporter = jsonExporter;
+            this.JSONImporter = jsonImporter;
+            this.XMLImporter = xmlImporter;
+            this.XMLExprter = xmlExporter;
             this.PostgreSql = new PostgreSql();
-            this.Database = new Database();
+            this.Database = database;
             this.PDFReporter = new PDFReporter();
         }
 
-        private PostgreSql PostgreSql { get; set; }
-        private XMLExporter XMLExprter { get; set; }
-        private XMLImporter XMLImporter { get; set; }
-        private IDatabase Database { get; set; }
-        private JSONExporter JSONExporter { get; set; }
-        private JSONImporter JSONImporter { get; set; }
-        public PDFReporter PDFReporter { get; private set; }
+        public PostgreSql PostgreSql { get; set; }
+        public IExporter XMLExprter { get; set; }
+        public IImporter XMLImporter { get; set; }
+        public IDatabase Database { get; set; }
+        public IExporter JSONExporter { get; set; }
+        public IImporter JSONImporter { get; set; }
+        public PDFReporter PDFReporter { get; set; }
 
         public void ProcessCommand(string command)
         {
             var commandName = command.Split(' ')[0];
             var tableNameOrPath = command.Split(' ')[1];
             
-           
             switch (commandName)
             {
                 case "exportJSON":
@@ -57,8 +59,6 @@ namespace Gym
                 case "reportPDF":
                     this.PDFReporter.ReportFile();
                     break;
-                case "app":
-                    break; 
                 default:
                     Console.WriteLine("The command is not found.");
                     break;
