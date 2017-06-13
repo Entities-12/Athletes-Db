@@ -32,27 +32,21 @@ namespace Gym
             {
                 //CRUD console commands
                 case "bookWorkout":
-                    Console.WriteLine(" Should perform create new athlete or workout");
                     this.WorkoutsCreator.OperateEntity();
                     break;
                 case "createProfile":
-                    Console.WriteLine(" Should perform create new athlete or workout");
                     this.AthletesCreator.OperateEntity();
                     break;
                 case "cancelWorkout":
-                    Console.WriteLine(" Should perform delete workout by given Id");
                     this.WorkoutsRemover.OperateEntity();
                     break;
                 case "editWorkout":
-                    Console.WriteLine(" Should perform update workout by given Id");
                     this.WorkoutsEditor.OperateEntity();
                     break;
                 case "viewProfile":
-                    Console.WriteLine(" Should perform read table for Athlets->AthletId and Workouts->AthletId");
                     this.AthletesReader.OperateEntity();
                     break;
                 case "viewWorkouts":
-                    Console.WriteLine(" Should perform read table for Athlets->AthletId and Workouts->AthletId");
                     this.WorkoutsReader.OperateEntity();
                     break;
                 default:
